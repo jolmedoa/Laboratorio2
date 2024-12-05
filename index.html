@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio4</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laboratorio No. 4</title>
+</head>
+<body>
+  <script>
+    // Paso 1: Declaración de Variables
+let num1 = 10;  // Primer número
+let num2 = 5;   // Segundo número
+let operacion = "suma";  // Operación inicial (puede ser 'suma', 'resta', 'multiplicación' o 'división')
+
+// Paso 2: Función para realizar operaciones
+function realizarOperacion(num1, num2, operacion) {
+  let resultado;
+
+  if (operacion === "suma") {
+    resultado = num1 + num2;
+  } else if (operacion === "resta") {
+    resultado = num1 - num2;
+  } else if (operacion === "multiplicacion") {
+    resultado = num1 * num2;
+  } else if (operacion === "division") {
+    if (num2 === 0) {
+      return "Error: División por cero no permitida";
+    }
+    resultado = num1 / num2;
+  } else {
+    return "Error: Operación no válida";
+  }
+
+  return resultado;
+}
+
+// Paso 3: Realizar validaciones de datos y operaciones
+// Función que simula el flujo de operaciones en un bucle
+
+function iniciarCalculadora() {
+  let continuar = true;
+
+  while (continuar) {
+    // Pedir al usuario que ingrese los dos números y la operación
+    num1 = parseFloat(prompt("Ingresa el primer número:"));
+    num2 = parseFloat(prompt("Ingresa el segundo número:"));
+    operacion = prompt("Ingresa la operación (suma, resta, multiplicacion, division):").toLowerCase();
+
+    // Validación de operación
+    if (operacion !== "suma" && operacion !== "resta" && operacion !== "multiplicacion" && operacion !== "division") {
+      alert("Error: Operación no válida.");
+      continue;
+    }
+
+    // Llamar a la función para realizar la operación
+    let resultado = realizarOperacion(num1, num2, operacion);
+
+    // Mostrar el resultado
+    alert("El resultado es: " + resultado);
+
+    // Preguntar si el usuario desea realizar otra operación
+    let respuesta = prompt("¿Deseas realizar otra operación? (sí / no):").toLowerCase();
+
+    if (respuesta === "no" || respuesta === "salir") {
+      alert("¡Gracias por usar la calculadora!");
+      continuar = false;
+    }
+  }
+}
+
+// Paso 4: Bucle para realizar múltiples operaciones
+iniciarCalculadora();
+
+  </script>
+</body>
+</html>
+</body>
+</html>
